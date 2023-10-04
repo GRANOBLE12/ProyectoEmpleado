@@ -9,24 +9,24 @@ package Logica_Negocio;
  * @author ANDRES
  */
 public class Empleado {
+    
     //Atributos
     public String nombre;
-    public int año_ingreso;
     public String codigo;
+    public int año_ingreso;
     
-    //constructor no parametrizado
-    public Empleado (){
-        
+    //Constructor no Parametrizado
+    public Empleado (){  
     }
-    //constructor paramnetrizado
-
+    
+    //Constructor Paramnetrizado
     public Empleado(String nombre, int año_ingreso, String codigo) {
         this.nombre = nombre;
         this.año_ingreso = año_ingreso;
         this.codigo = codigo;
     }
+    
     //Setters
-
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -38,8 +38,8 @@ public class Empleado {
     public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
-    //getters
-
+    
+    //Getters
     public String getNombre() {
         return nombre;
     }
@@ -51,5 +51,4 @@ public class Empleado {
     public String getCodigo() {
         return codigo;
     }
-    
 }
