@@ -23,11 +23,11 @@ public class Main {
 //Declarar Variables
     String nombre = "";
     String codigo = "";
-    String Id = "";
+    String ID = "";
     int año_ingreso = 0;
-    int cantidad =0;
+    int cantidad = 0;
     int opcion = 0;
-    int bandera =0 ;
+    int bandera = 0 ;
    
 //Creación de Objetos
     Empleado objempleado = new Empleado();
@@ -86,9 +86,9 @@ case 2:
 scan.nextLine();
                                    System.out.println(""); //Para dar espacio
     System.out.println("Digite el ID del empleado a modificar");
-    Id = scan.nextLine();
+    ID = scan.nextLine();
     for (int i = 0; i < listaempleados.size(); i++) {
-        if(listaempleados.get(i).getCodigo().equals(Id))
+        if(listaempleados.get(i).getCodigo().equals(ID))
 {                                  System.out.println(""); //Para dar espacio
         System.out.println("Digite el nombre del empleado");
         nombre = scan.nextLine();
@@ -117,9 +117,9 @@ case 3:
 scan.nextLine();
                                    System.out.println(""); //Para dar espacio
 System.out.println("Digite el código del empleado a buscar");
-    Id = scan.nextLine();
+    ID = scan.nextLine();
     for (int i = 0; i < listaempleados.size(); i++) {
-        if(listaempleados.get(i).getCodigo().equals(Id))
+        if(listaempleados.get(i).getCodigo().equals(ID))
         {
                                    System.out.println(""); //Para dar espacio
         System.out.println("Empleado" + "\t" + (i + 1));
@@ -139,7 +139,7 @@ if (bandera == 0) {
 break;
 
 case 4:
-//Listar Empleado(s) 
+//Listar Empleado(s)
 if (listaempleados.size() > 0) {
 for (int i = 0; i < listaempleados.size(); i++) {
                                    System.out.println(""); //Para dar espacio
@@ -159,10 +159,10 @@ case 5:
 scan.nextLine();
                                    System.out.println(""); //Para dar espacio
 System.out.println("Digite el código del empleado a eliminar");
-Id = scan.nextLine();
+ID = scan.nextLine();
 
 for (int i = 0; i < listaempleados.size(); i++) {
-    if(listaempleados.get(i).getCodigo().equals(Id))
+    if(listaempleados.get(i).getCodigo().equals(ID))
     {
                                    System.out.println(""); //Para dar espacio
     System.out.println("El Empleado "+ (i + 1) +" ha sido eliminado");
