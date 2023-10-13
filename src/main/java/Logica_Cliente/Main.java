@@ -30,7 +30,7 @@ public class Main {
     int cantidad = 0;
     int opcion = 0;
     int bandera = 0 ;
-    retorno
+    int retorno = 0;
    
 //Creación de Objetos
     Empleado objempleado = new Empleado();
@@ -79,11 +79,14 @@ System.out.println("Digite la cantidad de empleados a registrar");
         System.out.println("Digite nuevamente el nombre del empleado");
         nombre = scan.nextLine();
         
-        retorno = RetornarValor(Nombre);
+        retorno = RetornarValor(nombre);
     }    
     
-        retorno = RetornarValor(Nombre);
-        while (i )
+        retorno = RetornarValor(nombre);
+        while (retorno != 0 || nombre.equals (""));
+        {
+            
+        }
     
                                    System.out.println(""); //Para dar espacio
     System.out.println("Digite el código del empleado " + (i + 1));
@@ -231,19 +234,19 @@ break;
     public static int RetornarValor(String nombre)
     {
         int letra = 0;
-        int número = 0;
+        int numero = 0;
         
         for (int i = 0; i < nombre.length(); i++){
             boolean bandera = Character.isDigit(nombre.charAt(i));
             if (bandera )
             {
-                System.out.println("Es un número " + nombre.charAt(i));
-                número++;
+                //System.out.println("Es un número " + nombre.charAt(i));
+                numero++;
             } else {
-                System.out,println()
+                //System.out.println("Es un carácter " + nombre.charAt(i));
+                letra++;
             }
         }
-        
-        return 0;
+        return numero;
     }
 }
