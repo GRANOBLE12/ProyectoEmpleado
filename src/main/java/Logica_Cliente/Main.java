@@ -83,14 +83,13 @@ System.out.println("Digite la cantidad de empleados a registrar");
     }    
     
         retorno = RetornarValor(nombre);
-        while (retorno != 0 || nombre.equals (""));
-        {
-            
-        }
+        while (retorno != 0 || nombre.equals ("")){
     
-                                   System.out.println(""); //Para dar espacio
-    System.out.println("Digite el código del empleado " + (i + 1));
-    codigo = scan.nextLine();
+    System.out.println(""); //Para dar espacio
+    System.out.println("Digite el nombre del empleado " + (i + 1));
+    nombre = scan.nextLine();
+    retorno = RetornarValor(nombre);
+        }
     while(codigo.equals(""))
     {                                        
     System.out.println("Digite nuevamente el código del empleado");
@@ -238,7 +237,7 @@ break;
         
         for (int i = 0; i < nombre.length(); i++){
             boolean bandera = Character.isDigit(nombre.charAt(i));
-            if (bandera )
+            if (bandera)
             {
                 //System.out.println("Es un número " + nombre.charAt(i));
                 numero++;
