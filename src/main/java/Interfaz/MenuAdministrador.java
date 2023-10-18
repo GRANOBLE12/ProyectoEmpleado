@@ -23,6 +23,7 @@ public class MenuAdministrador extends javax.swing.JFrame {
     public MenuAdministrador() {
         initComponents();
         listaempleados= new ArrayList<>(); 
+        this.setSize(400, 225);
         
     }
 
@@ -51,8 +52,13 @@ public class MenuAdministrador extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("MENÚ");
+        setBackground(new java.awt.Color(0, 0, 0));
+        getContentPane().setLayout(null);
 
         jButton1.setText("Registrar Empleado");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -60,6 +66,8 @@ public class MenuAdministrador extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(130, 90, 123, 24);
 
         jButton2.setText("Mostrar Empleados");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -67,6 +75,8 @@ public class MenuAdministrador extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton2);
+        jButton2.setBounds(230, 170, 123, 24);
 
         jButton3.setText("Editar Empleado");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -74,6 +84,8 @@ public class MenuAdministrador extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton3);
+        jButton3.setBounds(230, 130, 123, 24);
 
         jButton4.setText("Consultar Empleado");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -81,6 +93,8 @@ public class MenuAdministrador extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton4);
+        jButton4.setBounds(40, 130, 126, 24);
 
         jButton5.setText("Eliminar Empleado");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -88,37 +102,19 @@ public class MenuAdministrador extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton5);
+        jButton5.setBounds(40, 170, 123, 24);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(125, 125, 125)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton4)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jButton5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(138, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(53, 53, 53)
-                .addComponent(jButton1)
-                .addGap(18, 18, 18)
-                .addComponent(jButton3)
-                .addGap(17, 17, 17)
-                .addComponent(jButton4)
-                .addGap(18, 18, 18)
-                .addComponent(jButton2)
-                .addGap(18, 18, 18)
-                .addComponent(jButton5)
-                .addContainerGap(61, Short.MAX_VALUE))
-        );
+        jLabel2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("MENÚ DE OPCIONES");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(110, 40, 190, 20);
+
+        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\ANDRES\\OneDrive\\Escritorio\\istockphoto-1308682666-612x612.png")); // NOI18N
+        jLabel3.setText("jLabel3");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(0, 0, 400, 230);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -198,5 +194,7 @@ public class MenuAdministrador extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }

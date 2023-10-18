@@ -46,14 +46,23 @@ public class RegistrarEmpleado extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
         jLabel1.setText("Nombre");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(86, 65, 45, 16);
 
         jLabel2.setText("Codigo");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(86, 113, 40, 16);
 
         jLabel3.setText("Año Ingreso");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(86, 162, 66, 16);
 
         jButton1.setText("Registrar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -61,48 +70,25 @@ public class RegistrarEmpleado extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(160, 200, 63, 24);
+        getContentPane().add(jTextField1);
+        jTextField1.setBounds(183, 61, 149, 24);
+        getContentPane().add(jTextField2);
+        jTextField2.setBounds(183, 109, 149, 24);
+        getContentPane().add(jTextField3);
+        jTextField3.setBounds(180, 160, 149, 24);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(86, 86, 86)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addGap(31, 31, 31)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField1)
-                            .addComponent(jTextField2)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(162, 162, 162)
-                        .addComponent(jButton1)))
-                .addContainerGap(70, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(61, 61, 61)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(42, 42, 42)
-                .addComponent(jButton1)
-                .addContainerGap(59, Short.MAX_VALUE))
-        );
+        jLabel4.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setText("REGISTRAR EMPLEADO");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(100, 20, 220, 16);
+
+        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\ANDRES\\OneDrive\\Escritorio\\istockphoto-1308682666-612x612.png")); // NOI18N
+        jLabel5.setText("jLabel5");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(0, 0, 410, 233);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -114,14 +100,10 @@ public class RegistrarEmpleado extends javax.swing.JFrame {
         int año_ingreso= Integer.valueOf(jTextField3.getText());
         
         Empleado objempleado= new Empleado(nombre, año_ingreso, codigo);
-        Empleado objempleado1= new Empleado("Andres", 1994,"35677" );
-        Empleado objempleado2= new Empleado("Juan", 1993,"5678" );
-        Empleado objempleado3= new Empleado("Pedro", 1998, "4678");
+        
  
         listaempleado.add(objempleado);
-        listaempleado.add(objempleado1);
-        listaempleado.add(objempleado2);
-        listaempleado.add(objempleado3);
+       
         
         MenuAdministrador menu = new MenuAdministrador();
         menu.setListaempleados(listaempleado);
@@ -175,6 +157,8 @@ public class RegistrarEmpleado extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
