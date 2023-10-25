@@ -275,10 +275,8 @@ public class Main {
                 {
                     ce++;
                 }
-             }
-           
-
-        }
+            }   
+        } 
         return ce;
     }
     public static int VerificarCodigo(ArrayList<Empleado> listaempleados, String codigo)
@@ -304,7 +302,10 @@ public class Main {
         int totalempleados=listaempleados.size();
         for (int i = 0; i < listaempleados.size(); i++) {
             int resta=año_actual-listaempleados.get(i).getAño_ingreso();
-            acomuladorA+=acomuladorA+resta;
+            acomuladorA+=resta;
         }
+        promedio=acomuladorA/totalempleados;
+        System.out.println("El tpotal de los años de los empleados en la empresa es:"+promedio);
     }
+
 }

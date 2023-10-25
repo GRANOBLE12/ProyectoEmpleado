@@ -20,7 +20,7 @@ public class EliminarEmpleado extends javax.swing.JFrame {
     public EliminarEmpleado() {
         initComponents();
         listaempleado= new ArrayList<>();
-        this.setSize(400, 225);
+        this.setSize(400, 275);
     }
     
      public ArrayList<Empleado> getListaempleado() {
@@ -52,6 +52,7 @@ public class EliminarEmpleado extends javax.swing.JFrame {
         jLabel2.setText("jLabel2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Eliminar Empleado");
         getContentPane().setLayout(null);
 
         jLabel1.setText("Codigo");
@@ -67,7 +68,7 @@ public class EliminarEmpleado extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(270, 90, 58, 24);
+        jButton1.setBounds(270, 90, 80, 24);
 
         jTextField2.setEditable(false);
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
@@ -85,7 +86,7 @@ public class EliminarEmpleado extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(40, 190, 40, 24);
+        jButton2.setBounds(40, 190, 60, 24);
 
         jLabel4.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
@@ -93,10 +94,11 @@ public class EliminarEmpleado extends javax.swing.JFrame {
         getContentPane().add(jLabel4);
         jLabel4.setBounds(100, 20, 200, 24);
 
+        jLabel5.setDisplayedMnemonic('E');
         jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\ANDRES\\OneDrive\\Escritorio\\istockphoto-1308682666-612x612.png")); // NOI18N
         jLabel5.setText("jLabel5");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(1, -4, 390, 240);
+        jLabel5.setBounds(0, 0, 390, 233);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

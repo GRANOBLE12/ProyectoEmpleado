@@ -15,7 +15,7 @@ public class InicioSesion extends javax.swing.JFrame {
      */
     public InicioSesion() {
         initComponents();
-        this.setSize(400, 233);
+        this.setSize(400, 275);
     }
 
     /**
@@ -36,7 +36,7 @@ public class InicioSesion extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Iniciar Seccion ");
+        setTitle("Iniciar Sesión ");
         getContentPane().setLayout(null);
 
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
@@ -67,7 +67,7 @@ public class InicioSesion extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(140, 200, 87, 24);
+        jButton1.setBounds(140, 200, 110, 24);
 
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
@@ -75,11 +75,12 @@ public class InicioSesion extends javax.swing.JFrame {
         getContentPane().add(jLabel3);
         jLabel3.setBounds(90, 30, 230, 47);
 
+        jLabel4.setDisplayedMnemonic('I');
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\ANDRES\\OneDrive\\Escritorio\\istockphoto-1308682666-612x612.png")); // NOI18N
         jLabel4.setText("jLabel4");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(1, -4, 410, 240);
+        jLabel4.setBounds(0, 0, 410, 233);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

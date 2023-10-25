@@ -20,6 +20,7 @@ public class MostrarEmpleado extends javax.swing.JFrame {
     public MostrarEmpleado() {
         initComponents();
         listaempleados= new ArrayList<>();
+        this.setSize(405, 275);
     }
 
     public ArrayList<Empleado> getListaempleados() {
@@ -49,6 +50,7 @@ public class MostrarEmpleado extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Mostrar Empleado");
         getContentPane().setLayout(null);
 
         jTextArea1.setEditable(false);
@@ -66,7 +68,7 @@ public class MostrarEmpleado extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(290, 200, 53, 24);
+        jButton1.setBounds(273, 200, 70, 24);
 
         jButton2.setText("Atras");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -75,7 +77,7 @@ public class MostrarEmpleado extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(60, 200, 40, 24);
+        jButton2.setBounds(60, 200, 60, 24);
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
@@ -83,6 +85,7 @@ public class MostrarEmpleado extends javax.swing.JFrame {
         getContentPane().add(jLabel1);
         jLabel1.setBounds(90, 20, 220, 24);
 
+        jLabel2.setDisplayedMnemonic('M');
         jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\ANDRES\\OneDrive\\Escritorio\\istockphoto-1308682666-612x612.png")); // NOI18N
         jLabel2.setText("jLabel2");
         getContentPane().add(jLabel2);

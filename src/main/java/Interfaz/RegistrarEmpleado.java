@@ -22,14 +22,9 @@ public class RegistrarEmpleado extends javax.swing.JFrame {
     public RegistrarEmpleado() {
         initComponents();
         listaempleado= new ArrayList<>();
+        this.setSize(400, 275);
         
     }
-
-   
-
-    
-
-    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -50,6 +45,7 @@ public class RegistrarEmpleado extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Registrar Empleado");
         getContentPane().setLayout(null);
 
         jLabel1.setText("Nombre");
@@ -71,7 +67,7 @@ public class RegistrarEmpleado extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(160, 200, 63, 24);
+        jButton1.setBounds(150, 200, 90, 24);
         getContentPane().add(jTextField1);
         jTextField1.setBounds(183, 61, 149, 24);
         getContentPane().add(jTextField2);
@@ -85,6 +81,7 @@ public class RegistrarEmpleado extends javax.swing.JFrame {
         getContentPane().add(jLabel4);
         jLabel4.setBounds(100, 20, 220, 16);
 
+        jLabel5.setDisplayedMnemonic('R');
         jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\ANDRES\\OneDrive\\Escritorio\\istockphoto-1308682666-612x612.png")); // NOI18N
         jLabel5.setText("jLabel5");
         getContentPane().add(jLabel5);
@@ -98,6 +95,7 @@ public class RegistrarEmpleado extends javax.swing.JFrame {
         String nombre= jTextField1.getText();
         String codigo= jTextField2.getText();
         int año_ingreso= Integer.valueOf(jTextField3.getText());
+        
         
         Empleado objempleado= new Empleado(nombre, año_ingreso, codigo);
         

@@ -22,7 +22,7 @@ public class EditarEmpleado extends javax.swing.JFrame {
     public EditarEmpleado() {
         initComponents();
         listaempleado= new ArrayList<>();
-        this.setSize(400, 225);
+        this.setSize(400, 275);
     }
 
     public ArrayList<Empleado> getListaempleado() {
@@ -58,6 +58,7 @@ public class EditarEmpleado extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Editar Empleados");
         getContentPane().setLayout(null);
 
         jLabel1.setText("Nombre:");
@@ -79,7 +80,7 @@ public class EditarEmpleado extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(310, 90, 51, 24);
+        jButton1.setBounds(290, 90, 70, 24);
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -87,7 +88,7 @@ public class EditarEmpleado extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextField1);
-        jTextField1.setBounds(140, 130, 140, 20);
+        jTextField1.setBounds(140, 130, 140, 24);
         getContentPane().add(jTextField2);
         jTextField2.setBounds(60, 160, 110, 24);
         getContentPane().add(jTextField3);
@@ -100,7 +101,7 @@ public class EditarEmpleado extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(180, 200, 44, 24);
+        jButton2.setBounds(170, 200, 60, 24);
 
         jLabel5.setText("Buscar Codigo");
         getContentPane().add(jLabel5);
@@ -114,10 +115,11 @@ public class EditarEmpleado extends javax.swing.JFrame {
         getContentPane().add(jLabel4);
         jLabel4.setBounds(110, 30, 180, 24);
 
+        jLabel6.setDisplayedMnemonic('E');
         jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\ANDRES\\OneDrive\\Escritorio\\istockphoto-1308682666-612x612.png")); // NOI18N
         jLabel6.setText("jLabel6");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(1, -4, 390, 240);
+        jLabel6.setBounds(0, 0, 390, 233);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

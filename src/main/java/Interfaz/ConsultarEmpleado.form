@@ -16,6 +16,7 @@
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="title" type="java.lang.String" value="Consultar Empleados "/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -51,7 +52,7 @@
     <Component class="javax.swing.JTextField" name="jTextField1">
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="150" y="70" width="108" height="-1"/>
+          <AbsoluteConstraints x="150" y="70" width="108" height="30"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -64,7 +65,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="270" y="70" width="-1" height="-1"/>
+          <AbsoluteConstraints x="270" y="70" width="70" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -104,7 +105,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="110" y="120" width="220" height="-1"/>
+          <AbsoluteConstraints x="110" y="120" width="220" height="30"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -124,7 +125,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="280" y="160" width="108" height="-1"/>
+          <AbsoluteConstraints x="280" y="160" width="90" height="30"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -137,7 +138,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="30" y="200" width="-1" height="-1"/>
+          <AbsoluteConstraints x="30" y="194" width="60" height="30"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -159,6 +160,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel7">
       <Properties>
+        <Property name="displayedMnemonic" type="int" value="67"/>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="2" name="C:\Users\ANDRES\OneDrive\Escritorio\istockphoto-1308682666-612x612.png"/>
         </Property>

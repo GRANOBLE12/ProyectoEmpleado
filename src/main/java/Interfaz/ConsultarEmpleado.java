@@ -21,7 +21,7 @@ public class ConsultarEmpleado extends javax.swing.JFrame {
     public ConsultarEmpleado() {
         initComponents();
         listaempleado= new ArrayList<>();
-        this.setSize(400, 225);
+        this.setSize(400, 275);
     }
     
      public ArrayList<Empleado> getListaempleado() {
@@ -60,13 +60,14 @@ public class ConsultarEmpleado extends javax.swing.JFrame {
         jLabel5.setText("jLabel4");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Consultar Empleados ");
         getContentPane().setLayout(null);
 
         jLabel1.setText("Codigo");
         getContentPane().add(jLabel1);
         jLabel1.setBounds(90, 70, 40, 16);
         getContentPane().add(jTextField1);
-        jTextField1.setBounds(150, 70, 108, 24);
+        jTextField1.setBounds(150, 70, 108, 30);
 
         jButton1.setText("Buscar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -75,7 +76,7 @@ public class ConsultarEmpleado extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(270, 70, 51, 24);
+        jButton1.setBounds(270, 70, 70, 24);
 
         jLabel2.setText("Nombre");
         getContentPane().add(jLabel2);
@@ -91,7 +92,7 @@ public class ConsultarEmpleado extends javax.swing.JFrame {
 
         jTextField2.setEditable(false);
         getContentPane().add(jTextField2);
-        jTextField2.setBounds(110, 120, 220, 24);
+        jTextField2.setBounds(110, 120, 220, 30);
 
         jTextField3.setEditable(false);
         getContentPane().add(jTextField3);
@@ -99,7 +100,7 @@ public class ConsultarEmpleado extends javax.swing.JFrame {
 
         jTextField4.setEditable(false);
         getContentPane().add(jTextField4);
-        jTextField4.setBounds(280, 160, 108, 24);
+        jTextField4.setBounds(280, 160, 90, 30);
 
         jButton2.setText("Atras");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -108,7 +109,7 @@ public class ConsultarEmpleado extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(30, 200, 40, 24);
+        jButton2.setBounds(30, 194, 60, 30);
 
         jLabel6.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
@@ -116,6 +117,7 @@ public class ConsultarEmpleado extends javax.swing.JFrame {
         getContentPane().add(jLabel6);
         jLabel6.setBounds(90, 20, 230, 24);
 
+        jLabel7.setDisplayedMnemonic('C');
         jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\ANDRES\\OneDrive\\Escritorio\\istockphoto-1308682666-612x612.png")); // NOI18N
         jLabel7.setText("jLabel7");
         getContentPane().add(jLabel7);
