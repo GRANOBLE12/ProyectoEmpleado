@@ -20,7 +20,13 @@ public class Main {
         int cantidad = 0;
         int opcion = 0;
         int bandera = 0;
-        int retorno = 0;
+        int retorno = 0; 
+        //variables nuevas
+        String apellido ="";
+        String correo = "";
+        int retornoce=0;
+        int retornover=0;
+        int añoA=2023;
 
         // Creación de Objetos
         Empleado objempleado = new Empleado();
@@ -40,7 +46,9 @@ public class Main {
             System.out.println("3. Buscar empleado(s) ");
             System.out.println("4. Mostrar empleado(s)");
             System.out.println("5. Eliminar empleado(s)");
-            System.out.println("6. Salir del programa");
+            System.out.println("6. Calcular años promedio");
+            System.out.println("7. Concatenar correos");
+            System.out.println("8. Salir del programa");
 
             System.out.println(); // Para dar espacio
             System.out.print("Seleccione una opción: ");
@@ -57,30 +65,28 @@ public class Main {
                     // Ciclo para registrar empleados
                     if (cantidad > 0) {
                         for (int i = 0; i < cantidad; i++) {
-                            System.out.println(); // Para dar espacio
                             System.out.println("Digite el nombre del empleado " + (i + 1));
                             nombre = scan.nextLine();
-                            while (nombre.equals("")) {
-                                System.out.println("Rellene este campo");
-                                System.out.println("Digite el nombre nuevamente");
-                                nombre = scan.nextLine();
-                                retorno = RetornarValor(nombre);
-                            }
 
                             retorno = RetornarValor(nombre);
-                            while (retorno != 0 || nombre.equals("")) {
+                            retornoce=RetornarCE(nombre);
+                            while (retorno != 0 || retornoce!=0 || nombre.equals("")) {
                                 System.out.println(); // Para dar espacio
                                 System.out.println("Digite el nombre del empleado " + (i + 1));
                                 nombre = scan.nextLine();
                                 retorno = RetornarValor(nombre);
+                                retornoce=RetornarCE(nombre);
                             }
-                            System.out.println("Digite el código del empleado " + (i + 1));
-                            codigo = scan.nextLine();
-                            while (codigo.equals("")) {
-                                System.out.println("Rellene este campo");
+                                System.out.println("Digite el código del empleado " + (i + 1));
+                                codigo = scan.nextLine();
+                                retornover=VerificarCodigo(listaempleados, codigo);
+                            while (codigo.equals("")||retornover!=0) {
                                 System.out.println("Digite nuevamente el código del empleado" +(i+1));
                                 codigo = scan.nextLine();
+                                retornover=VerificarCodigo(listaempleados, codigo);
                             }
+                            
+                           
                             System.out.println(); // Para dar espacio
                             System.out.println("Digite el año de ingreso del empleado " + (i + 1));
                             año_ingreso = scan.nextInt();
@@ -198,8 +204,13 @@ public class Main {
                         System.out.println("El ID del empleado es incorrecto o no está registrado");
                     }
                     break;
-
                 case 6:
+                    // calcular años promedio 
+                    CalcularAñoP(listaempleados);
+                    break;
+                case 7:
+                    //Concatenar correos
+                case 8:
                     System.out.println(); // Para dar espacio
                     System.out.println("Saliendo del programa");
                     break;
@@ -208,9 +219,8 @@ public class Main {
                     System.out.println(); // Para dar espacio
                     System.out.println("Opción no válida");
             }
-        } while (opcion != 6);
+        } while (opcion != 8);
     }
-
     public static int RetornarValor(String nombre) {
         int letra = 0;
         int numero = 0;
@@ -224,5 +234,77 @@ public class Main {
             }
         }
         return numero;
+    }
+    public static int RetornarCE(String nombre)
+    {
+        int ce=0;
+
+        for (int j = 0; j < nombre.length(); j++) {
+             boolean flag = Character.isLetter(nombre.charAt(j));
+             if(!flag) {
+                //System.out.println("'"+ nombre.charAt(j)+"' is a number");
+                if(nombre.charAt(j)=='@')
+                {
+                    ce++;
+                }
+                 if(nombre.charAt(j)=='~')
+                {
+                    ce++;
+                }
+                 if(nombre.charAt(j)=='/')
+                {
+                    ce++;
+                }
+                 if(nombre.charAt(j)==';')
+                {
+                    ce++;
+                }
+                 if(nombre.charAt(j)==':')
+                {
+                    ce++;
+                }
+                 if(nombre.charAt(j)=='"')
+                {
+                    ce++;
+                }
+                 if(nombre.charAt(j)=='!')
+                {
+                    ce++;
+                }
+                  if(nombre.charAt(j)==' ')
+                {
+                    ce++;
+                }
+             }
+           
+
+        }
+        return ce;
+    }
+    public static int VerificarCodigo(ArrayList<Empleado> listaempleados, String codigo)
+    {
+        int bandera=0;
+        for (int i = 0; i < listaempleados.size(); i++) {
+           
+            if(listaempleados.get(i).getCodigo().equals(codigo))
+            {
+                bandera=1;
+            }
+            else
+            {
+                bandera=0;
+            }
+        }
+        return  bandera;
+    }
+    public static void CalcularAñoP(ArrayList<Empleado> listaempleados){
+        int año_actual=2023;
+        int acomuladorA=0;
+        float promedio=0;
+        int totalempleados=listaempleados.size();
+        for (int i = 0; i < listaempleados.size(); i++) {
+            int resta=año_actual-listaempleados.get(i).getAño_ingreso();
+            acomuladorA+=acomuladorA+resta;
+        }
     }
 }
