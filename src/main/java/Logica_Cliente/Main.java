@@ -90,7 +90,7 @@ public class Main {
                                 retornoce = RetornarCE(apellido);
                             }
                                 // Correo
-                                correo = JOptionPane.showInputDialog(null, "Digite el correo del empleado", "Correo", 1);
+                                correo=JOptionPane.showInputDialog(null, "Digite el correo del empleado", "Correo", 1);
                                 
                                 System.out.println("Digite el código del empleado " + (i + 1));
                                 codigo = scan.nextLine();
@@ -100,18 +100,28 @@ public class Main {
                                 codigo = scan.nextLine();
                                 retornover=VerificarCodigo(listaempleados, codigo);
                             }
-                                System.out.println(); // Para dar espacio
+                            boolean inputValido = false;
+                            while (!inputValido) {
                                 System.out.println("Digite el año de ingreso del empleado " + (i + 1));
-                                año_ingreso = scan.nextInt();
-                            while (año_ingreso < 1919 || año_ingreso >= 2024) {
-                                System.out.println(); // Para dar espacio
-                                System.out.println("El año de ingreso no es válido");
-                                System.out.println("Digite nuevamente el año de ingreso del empleado");
-                                año_ingreso = scan.nextInt();
-                                
+                                String aingreso = scan.nextLine();
+                            try {
+                                if (aingreso.isEmpty() || aingreso.trim().isEmpty()) {
+                                throw new NumberFormatException("Año de ingreso no puede estar vacío.");
                             }
-                            scan.nextLine();
-                            objempleado = new Empleado(nombre, año_ingreso, codigo);
+
+                            año_ingreso = Integer.parseInt(aingreso);
+
+                            if (año_ingreso < 1919 || año_ingreso > 2023) {
+                            throw new NumberFormatException("Año de ingreso fuera del rango válido (1919-2023).");
+                            }
+
+                            inputValido = true; // Si el año es válido, salimos del bucle.
+
+                            } catch (NumberFormatException e) {
+                            System.out.println(e.getMessage());
+                            }
+                        }
+                            objempleado = new Empleado(nombre, codigo, año_ingreso, apellido, correo);
                             listaempleados.add(objempleado);
                         }
                         System.out.println(); // Para dar espacio
@@ -133,23 +143,26 @@ public class Main {
                             System.out.println(); // Para dar espacio
                             System.out.println("Digite el nombre del empleado");
                             nombre = scan.nextLine();
-                            System.out.println("Digite el apellido del empleado");
-                            apellido = scan.nextLine();
-                            System.out.println();
-                            System.out.println("Digite el correo del empleado");
                             System.out.println(); // Para dar espacio
-                            System.out.println("Digite el código del empleado");
-                            codigo = scan.nextLine();
+                            System.out.println("Digite el apellido del empleado");
+                            apellido = scan.nextLine(); // Agregar esta línea
+                            System.out.println(); // Para dar espacio
+                            System.out.println("Digite el correo del empleado");
+                            correo=JOptionPane.showInputDialog(null, "Digite el correo del empleado", "Correo", 1);
+                            System.out.println(); // Para dar espacio
+                            System.out.println("Digite el código del empleado"); // Agregar esta línea
+                            codigo = scan.nextLine(); // Agregar esta línea
                             System.out.println(); // Para dar espacio
                             System.out.println("Digite el año de ingreso del empleado");
                             año_ingreso = scan.nextInt();
                             
 
                             listaempleados.get(i).setNombre(nombre);
-                            listaempleados.get(i).setApellido(apellido);
-                            listaempleados.get(i).setCorreo(correo);
                             listaempleados.get(i).setCodigo(codigo);
                             listaempleados.get(i).setAño_ingreso(año_ingreso);
+                            // Agregar estas líneas para editar apellido y correo
+                            listaempleados.get(i).setApellido(apellido);
+                            listaempleados.get(i).setCorreo(correo);
                             System.out.println(); // Para dar espacio
                             System.out.println("El empleado " + (i + 1) + " ha sido editado");
                             bandera = 1;
@@ -172,13 +185,12 @@ public class Main {
                             System.out.println(); // Para dar espacio
                             System.out.println("Empleado" + "\t" + (i + 1) + "\t" + "Ha sido buscado");
                             System.out.println("El nombre del empleado es:" + "\t" + listaempleados.get(i).getNombre());
-                            System.out.println("El apellido del empleado es:" + "\t" + listaempleados.get(i).getApellido());
-                            System.out.println("El correo del empleado es:" + "\t" + listaempleados.get(i).getCorreo());
-                            
+                            System.out.println("El apellido del empleado es:" + "\t" + listaempleados.get(i).getApellido()); // Agregar esta línea
                             System.out.println("El código del empleado es:" + "\t" + listaempleados.get(i).getCodigo());
                             System.out.println("El año de ingreso del empleado es:" + "\t" + listaempleados.get(i).getAño_ingreso());
+                            System.out.println("El correo del empleado es:" + "\t" + listaempleados.get(i).getCorreo()); // Agregar esta línea
                             bandera = 1;
-                            break;
+                            
                         }
                     }
                     if (bandera == 0) {
@@ -189,7 +201,7 @@ public class Main {
                     break;
 
                 case 4:
-                    // Listar Empleado(s)
+                    // Listar Empleado(s)que cuando se busque imprima el ape
                     System.out.println(); // Para dar espacio
                     System.out.println("Listado de los Empleados Registrados:");
                     if (listaempleados.size() > 0) {
@@ -197,11 +209,10 @@ public class Main {
                             System.out.println(); // Para dar espacio
                             System.out.println("Empleado" + "\t" + (i + 1));
                             System.out.println("El nombre del empleado es:" + "\t" + listaempleados.get(i).getNombre());
-                            System.out.println("El apellido del empleado es:" + "\t" + listaempleados.get(i).getApellido());
-                            System.out.println("El correo del empleado es:" + "\t" + listaempleados.get(i).getCorreo());
-
+                            System.out.println("El apellido del empleado es:" + "\t" + listaempleados.get(i).getApellido()); // Agregar esta línea
                             System.out.println("El código del empleado es:" + "\t" + listaempleados.get(i).getCodigo());
                             System.out.println("El año de ingreso del empleado es:" + "\t" + listaempleados.get(i).getAño_ingreso());
+                            System.out.println("El correo del empleado es:" + "\t" + listaempleados.get(i).getCorreo()); // Agregar esta línea
                         }
                     } else {
                         System.out.println(); // Para dar espacio
@@ -236,8 +247,8 @@ public class Main {
                     break;
                 case 7:
                     // Concatenar correos
-                    String listacorreos=ConcatenarCorreos(listaempleados);
-                    JOptionPane.showMessageDialog(null, listacorreos, "Informacion de correos", 1);
+                    String Listacorreos=ConcatenarCorreos(listaempleados);
+                    JOptionPane.showMessageDialog(null, Listacorreos, "Informacion de correos", 1);
                     break;
 
                 case 8:
@@ -335,7 +346,7 @@ public class Main {
             acomuladorA+=resta;
         }
         promedio=acomuladorA/totalempleados;
-        System.out.println("El tpotal de los años de los empleados en la empresa es:"+promedio);
+        System.out.println("El total de los años de los empleados en la empresa es:"+promedio);
     }
     public static String ConcatenarCorreos(ArrayList<Empleado> listaempleados)
     {
