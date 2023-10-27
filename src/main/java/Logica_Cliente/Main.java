@@ -254,10 +254,10 @@ public class Main {
                     break;
                 case 7:
                     // Concatenar correos
-                    if (listaempleados.size()<0) {
+                   if (listaempleados.size()>0) {
                     String Listacorreos=ConcatenarCorreos(listaempleados);
                     JOptionPane.showMessageDialog(null, Listacorreos, "Informacion de correos", 1);
-                    }else{
+                   }else{
                         System.out.println("No hay empleados registrados");
                     }
                     break;
