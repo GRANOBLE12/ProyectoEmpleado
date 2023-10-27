@@ -91,6 +91,7 @@ public class Main {
                                 retornoce = RetornarCE(apellido);
                             }
                                 // Correo
+                                
                                 correo=JOptionPane.showInputDialog(null, "Digite el correo del empleado", "Correo", 1);
                                 retornoco=RetornarCo(correo);
                                 while (correo.equals("")||retornoco!=0){
@@ -253,8 +254,12 @@ public class Main {
                     break;
                 case 7:
                     // Concatenar correos
+                    if (listaempleados.size()<0) {
                     String Listacorreos=ConcatenarCorreos(listaempleados);
                     JOptionPane.showMessageDialog(null, Listacorreos, "Informacion de correos", 1);
+                    }else{
+                        System.out.println("No hay empleados registrados");
+                    }
                     break;
 
                 case 8:
@@ -371,10 +376,11 @@ public class Main {
         for (int k = 0; k < Correo.length(); k++) {
              boolean flag = Character.isLetter(Correo.charAt(k));
              if(!flag) {
-                //System.out.println("'"+ nombre.charAt(j)+"' is a number");
+                
                 if(Correo.charAt(k)==' ')
                 {
                     cc++;
                 }}}
         return cc;
-    }}
+    }
+}
