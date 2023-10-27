@@ -28,6 +28,7 @@ public class Main {
         int retornoce=0;
         int retornover=0;
         int añoA=2023;
+        int retornoco=0;
 
         // Creación de Objetos
         Empleado objempleado = new Empleado();
@@ -91,6 +92,11 @@ public class Main {
                             }
                                 // Correo
                                 correo=JOptionPane.showInputDialog(null, "Digite el correo del empleado", "Correo", 1);
+                                retornoco=RetornarCo(correo);
+                                while (correo.equals("")||retornoco!=0){
+                                correo=JOptionPane.showInputDialog(null, "Digite el correo del empleado", "Correo", 1);
+                                retornoco=RetornarCo(correo);
+                                }
                                 
                                 System.out.println("Digite el código del empleado " + (i + 1));
                                 codigo = scan.nextLine();
@@ -358,4 +364,17 @@ public class Main {
          
         return concatenar;
     }
-}
+    public static int RetornarCo(String Correo)
+    {
+        int cc=0;
+
+        for (int k = 0; k < Correo.length(); k++) {
+             boolean flag = Character.isLetter(Correo.charAt(k));
+             if(!flag) {
+                //System.out.println("'"+ nombre.charAt(j)+"' is a number");
+                if(Correo.charAt(k)==' ')
+                {
+                    cc++;
+                }}}
+        return cc;
+    }}
