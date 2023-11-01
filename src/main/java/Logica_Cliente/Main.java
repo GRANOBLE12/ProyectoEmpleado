@@ -5,13 +5,20 @@
 package Logica_Cliente;
 
 import Logica_Negocio.Empleado;
+import static Logica_Negocio.Empleado.CalcularAñoP;
+import static Logica_Negocio.Empleado.ConcatenarCorreos;
+import static Logica_Negocio.Empleado.RetornarCo;
+import static Logica_Negocio.Empleado.VerificarCodigo;
+import static Logica_Negocio.Empleado.RetornarCantidad;
 import java.util.ArrayList;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
+import static Logica_Negocio.Helper.RetornarCE;
+import static Logica_Negocio.Helper.RetornarValor;
+import java.util.InputMismatchException;
+
 
 public class Main {
-    private static int i;
-
     public static void main(String[] args) {
         // Declarar Variables
         String nombre = "";
@@ -29,6 +36,7 @@ public class Main {
         int retornover=0;
         int añoA=2023;
         int retornoco=0;
+        int retornoca=0;
 
         // Creación de Objetos
         Empleado objempleado = new Empleado();
@@ -52,18 +60,33 @@ public class Main {
             System.out.println("7. Concatenar correos");
             System.out.println("8. Salir del programa");
 
-            System.out.println(); // Para dar espacio
-            System.out.print("Seleccione una opción: ");
-            opcion = scan.nextInt(); // Obtener la Elección del Usuario
+            try {
+                System.out.println("Digite la opcion");
+                opcion=  scan.nextInt();
+            }catch(InputMismatchException e)
+            {
+                System.out.println("Valor no admitido");
+                break;
+            }
 
             switch (opcion) {
                 case 1:
                     // Registro Empleado(s)
-                    System.out.println(); // Para dar espacio
+                    while(true){
+                        System.out.println("Digite la cantidad de empleados a registrar");
+                        String input = scan.nextLine().trim();
+                        if (input.isEmpty()){
+                            throw new IllegalArgumentException("no puedes dejar este campo en vacio");
+                        }
+                    
+                    try{
+                    cantidad= Integer.parseInt(input);
                     System.out.println("Digite la cantidad de empleados a registrar");
-                    cantidad = scan.nextInt();
-                    scan.nextLine();
-
+                    cantidad=scan.nextInt();
+                    }catch(InputMismatchException e)
+                    {System.out.println("Valor no admitido");
+                    }
+                    
                     // Ciclo para registrar empleados
                     if (cantidad > 0) {
                         for (int i = 0; i < cantidad; i++) {
@@ -272,115 +295,5 @@ public class Main {
                     System.out.println("Opción no válida");
             }
         } while (opcion != 8);
-    }
-    public static int RetornarValor(String nombre) {
-        int letra = 0;
-        int numero = 0;
-
-        for (int i = 0; i < nombre.length(); i++) {
-            boolean bandera = Character.isDigit(nombre.charAt(i));
-            if (bandera) {
-                numero++;
-            } else {
-                letra++;
-            }
-        }
-        return numero;
-    }
-    public static int RetornarCE(String nombre)
-    {
-        int ce=0;
-
-        for (int j = 0; j < nombre.length(); j++) {
-             boolean flag = Character.isLetter(nombre.charAt(j));
-             if(!flag) {
-                //System.out.println("'"+ nombre.charAt(j)+"' is a number");
-                if(nombre.charAt(j)=='@')
-                {
-                    ce++;
-                }
-                 if(nombre.charAt(j)=='~')
-                {
-                    ce++;
-                }
-                 if(nombre.charAt(j)=='/')
-                {
-                    ce++;
-                }
-                 if(nombre.charAt(j)==';')
-                {
-                    ce++;
-                }
-                 if(nombre.charAt(j)==':')
-                {
-                    ce++;
-                }
-                 if(nombre.charAt(j)=='"')
-                {
-                    ce++;
-                }
-                 if(nombre.charAt(j)=='!')
-                {
-                    ce++;
-                }
-                  if(nombre.charAt(j)==' ')
-                {
-                    ce++;
-                }
-            }   
-        } 
-        return ce;
-    }
-    public static int VerificarCodigo(ArrayList<Empleado> listaempleados, String codigo)
-    {
-        int bandera=0;
-        for (int i = 0; i < listaempleados.size(); i++) {
-           
-            if(listaempleados.get(i).getCodigo().equals(codigo))
-            {
-                bandera=1;
-            }
-            else
-            {
-                bandera=0;
-            }
-        }
-        return  bandera;
-    }
-    public static void CalcularAñoP(ArrayList<Empleado> listaempleados){
-        int año_actual=2023;
-        int acomuladorA=0;
-        float promedio=0;
-        int totalempleados=listaempleados.size();
-        for (int i = 0; i < listaempleados.size(); i++) {
-            int resta=año_actual-listaempleados.get(i).getAño_ingreso();
-            acomuladorA+=resta;
-        }
-        promedio=acomuladorA/totalempleados;
-        System.out.println("El total de los años de los empleados en la empresa es:"+promedio);
-    }
-    public static String ConcatenarCorreos(ArrayList<Empleado> listaempleados)
-    {
-        String concatenar="";
-       
-        for (int i = 0; i < listaempleados.size(); i++) {
-            concatenar+=listaempleados.get(i).getCorreo()+"\n";
-        }
-         
-        return concatenar;
-    }
-    public static int RetornarCo(String Correo)
-    {
-        int cc=0;
-
-        for (int k = 0; k < Correo.length(); k++) {
-             boolean flag = Character.isLetter(Correo.charAt(k));
-             if(!flag) {
-                
-                if(Correo.charAt(k)==' ')
-                {
-                    cc++;
-                }}}
-        return cc;
     }
 }
