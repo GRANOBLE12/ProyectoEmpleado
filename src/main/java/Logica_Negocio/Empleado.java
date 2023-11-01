@@ -4,6 +4,8 @@
  */
 package Logica_Negocio;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author ANDRES
@@ -83,5 +85,69 @@ public class Empleado {
     public String getCorreo() {
         return correo;
     }
-    
+   public static void CalcularAñoP(ArrayList<Empleado> listaempleados){
+        int año_actual=2023;
+        int acomuladorA=0;
+        float promedio=0;
+        int totalempleados=listaempleados.size();
+        for (int i = 0; i < listaempleados.size(); i++) {
+            int resta=año_actual-listaempleados.get(i).getAño_ingreso();
+            acomuladorA+=resta;
+        }
+        promedio=acomuladorA/totalempleados;
+        System.out.println("El total de los años de los empleados en la empresa es:"+promedio);
+    }  
+  public static int VerificarCodigo(ArrayList<Empleado> listaempleados, String codigo)
+    {
+        int bandera=0;
+        for (int i = 0; i < listaempleados.size(); i++) {
+           
+            if(listaempleados.get(i).getCodigo().equals(codigo))
+            {
+                bandera=1;
+            }
+            else
+            {
+                bandera=0;
+            }
+        }
+        return  bandera;
+    }
+  public static int RetornarCo(String Correo)
+    {
+        int cc=0;
+
+        for (int k = 0; k < Correo.length(); k++) {
+             boolean flag = Character.isLetter(Correo.charAt(k));
+             if(!flag) {
+                
+                if(Correo.charAt(k)==' ')
+                {
+                    cc++;
+                }}}
+        return cc;
+    }
+  public static String ConcatenarCorreos(ArrayList<Empleado> listaempleados)
+    {
+        String concatenar="";
+       
+        for (int i = 0; i < listaempleados.size(); i++) {
+            concatenar+=listaempleados.get(i).getCorreo()+"\n";
+        }
+         
+        return concatenar;
+    }
+    public static int RetornarCantidad(String cantidad) {
+        int letra = 0;
+        int numero = 0;
+        for (int i = 0; i < cantidad.length(); i++) {
+            boolean bandera = Character.isDigit(cantidad.charAt(i));
+            if (bandera) {
+                letra++;
+            } else {
+                numero++;
+            }
+        }
+        return letra;
+    }
 }
