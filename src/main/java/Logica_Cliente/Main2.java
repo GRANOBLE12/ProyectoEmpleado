@@ -10,8 +10,6 @@ import static Logica_Negocio.Empleado.ConcatenarCorreos;
 import static Logica_Negocio.Empleado.RetornarCo;
 import static Logica_Negocio.Empleado.VerificarCodigo;
 import static Logica_Negocio.Empleado.RetornarCantidad;
-import static Logica_Negocio.Empleado.CalcularAñosEmpresaEmpleado;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
@@ -20,7 +18,7 @@ import static Logica_Negocio.Helper.RetornarValor;
 import java.util.InputMismatchException;
 
 
-public class Main {
+public class Main2 {
     public static void main(String[] args) {
         // Declarar Variables
         String nombre = "";
@@ -39,7 +37,6 @@ public class Main {
         int añoA=2023;
         int retornoco=0;
         int retornoca=0;
-        int retornoe=0;
 
         // Creación de Objetos
         Empleado objempleado = new Empleado();
@@ -284,8 +281,8 @@ public class Main {
                     }
                     break;
                 case 8:
-                CalcularAñosEmpresaEmpleado(listaempleados);
-
+                    System.out.println(); // Para dar espacio
+                    System.out.println("Saliendo del programa");
                     break;
 
                 case 9:

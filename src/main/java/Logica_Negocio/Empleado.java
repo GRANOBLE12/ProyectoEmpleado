@@ -150,4 +150,16 @@ public class Empleado {
         }
         return letra;
     }
+    public static void CalcularAñosEmpresaEmpleado(ArrayList<Empleado> listaempleados, String codigo){
+        int año_actual=2023;
+        int resta=0;
+        for (int i = 0; i < listaempleados.size(); i++) {
+            if (listaempleados.get(i).getCodigo().equals(Id)) {
+
+            resta=año_actual-listaempleados.get(i).getAño_ingreso();
+            System.out.println("El total de años que el empleado lleva en la empresa es de:"+resta);
+        }
+
+    }
+
 }
